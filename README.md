@@ -21,4 +21,3 @@ cuz I will be working on this...
 * Mind supports protection domains, identify the entity that may or may not have permission to access a particular memory region, and permission classes, which identify what the entity can do to the memory region.
 * Decouple the granularity of cache (and memory) accesses from the granularity at which cache coherence is performed. This allows memory accesses to be performed at finer granularities, while directory entries are tracked at coarser granularities with the coherence protocol.
 * Bounded Splitting Algorithm: Tracks false invalidation count for every region, if any region has a false validation count greater than a threshold in an epoch, it splits the region into two equal halves and creates a new directory entry. 
-*
