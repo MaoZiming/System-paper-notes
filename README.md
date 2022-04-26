@@ -51,4 +51,14 @@ cuz I will be working on this...
 * Runtime provides a uniform address space across the x86 and ARM cores. (1) maps NVMe queue pairs across hardware/software boundaries - between guest VMs running on x86 and service code offloaded to the ARM cores. (2) provides an efficient data path that alleviates unnecessary copying across the sfotware components via _transparent address translation_ across multiple address space.
 * _Quite difficult to read_
 
+### FairRide [[Link](https://www.usenix.org/system/files/conference/nsdi16/nsdi16-paper-pu.pdf)]
 
+* Fair allocation of memory cache for multiple users with shared files: surprisingly, no memory allocation policy can provide all three desirable properties (isolation-guarantee, strategy-proofness, and Pareto-efficiency) that are typically achievable by other types of resources, e.g. CPU or network
+* A cache file can be accessed by multiple users at a time and isolating cache leads to multiple copies of such shared files. We find such _non-exclusive sharing_ to be a defining aspect of cache allocation, while other resources are typically exclusively shared. 
+* Global sharing policies lack isolation-guarantee and strategy-proofness, while static isolation (such as through a hypervisor) is not Pareto-efficient and leads to poor resource utilization.
+* _Probabilistic blocking_ probabilistically disallowing a user from accessing a cached file if the file is not cached on behalf of the user.
+* Redit or Memcached does not provide any guarantee for performance isolation. It is easy for a strategic user to improve her performance and hurt others (by 2.9x performance gap) by making spurious access to files.
+* Default answer in cloud cache is to setup a separate caching instance per user or per application.
+* "free ride": when files are shared, a user can "free ride?" files that have been already cached by other users.
+* Probabilistically blocking accessing files cached by _other users_, with $\frac{1}{n_j + 1}$, where $n_j$ is the number of other users caching the file
+* Introduced _expected delaying_ to approximate the expected effect of _probabilistic blocking_. The wait time should be set as the expected delay a user would experience if she is probabilistically blocked by the system.
