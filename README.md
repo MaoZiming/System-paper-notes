@@ -34,3 +34,12 @@ cuz I will be working on this...
 * Main overhead for Xen: the XenStore interaction and the device creation. 
 * Forego the use of the XenStore for operations such as creation, pause/unpause and migration. The hypervisor already acts as a centralized store, so we can extend its functionality to implement our (no XenStore) mechanism. Modify hypervisor to create new device memory page for each new VM. 
 * A VM create command issued does not actually need to run at VM create time. VMs can be pre-executed and off-loaded from the creation process. The _prepare_ phrase is responsible for functionality common to all VMs. Offload this functionality to the chaos daemon, which generates a number of VM shells and places them in a pull.
+
+### Container-based OS Virtualization [[Link](http://www.cs.toronto.edu/~demke/2227/S.14/Papers/p275-soltesz.pdf)]
+
+* Old 2007 EuroSys Paper
+* Hypervisor: creates and manages VMs
+* Comparing hypervisor technology that isolate VMs at the hardware abstraction layer with container-based operating-system (COS) technology that isolate VMs at the system level.
+* Fault Isolation: for hypervisors there is a narrow interface to events and virtual device, whereas for COSs there is the wide system call ABI. Arguably it is easier to verify the narrow interface, which implies that the interface exposed by hypervisors are more likely to be correct
+* COS rely on a single underlying kernel image, they are not able to run multiple kernels like hypervisors can. 
+* The COS approach to security isolation directly involves internal OS objects (PIDs, UIDs, etc.) (1) separation of name spaces (2) access controls. Through this _contextualization_ the global identifiers become per-VM global identifiers. 
