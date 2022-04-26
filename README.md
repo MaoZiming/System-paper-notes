@@ -43,3 +43,12 @@ cuz I will be working on this...
 * Fault Isolation: for hypervisors there is a narrow interface to events and virtual device, whereas for COSs there is the wide system call ABI. Arguably it is easier to verify the narrow interface, which implies that the interface exposed by hypervisors are more likely to be correct
 * COS rely on a single underlying kernel image, they are not able to run multiple kernels like hypervisors can. 
 * The COS approach to security isolation directly involves internal OS objects (PIDs, UIDs, etc.) (1) separation of name spaces (2) access controls. Through this _contextualization_ the global identifiers become per-VM global identifiers. 
+
+### LeapIO [[Link](https://ucare.cs.uchicago.edu/pdf/asplos20-LeapIO.pdf)]
+
+* Observation: cloud storage stack is extremely resource hungry. Experiments suggest that the cloud provider may pay a _heavy tax_ for storage: 10-20% of x86 cores may have to be reserved for running storage functions. Storage functions cannot be fully accelerated in hardware.
+* LeapIO allows the storage services to portably leverage ARM co-processors. 
+* Runtime provides a uniform address space across the x86 and ARM cores. (1) maps NVMe queue pairs across hardware/software boundaries - between guest VMs running on x86 and service code offloaded to the ARM cores. (2) provides an efficient data path that alleviates unnecessary copying across the sfotware components via _transparent address translation_ across multiple address space.
+* _Quite difficult to read_
+
+
