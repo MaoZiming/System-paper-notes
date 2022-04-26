@@ -62,3 +62,10 @@ cuz I will be working on this...
 * "free ride": when files are shared, a user can "free ride?" files that have been already cached by other users.
 * Probabilistically blocking accessing files cached by _other users_, with $\frac{1}{n_j + 1}$, where $n_j$ is the number of other users caching the file
 * Introduced _expected delaying_ to approximate the expected effect of _probabilistic blocking_. The wait time should be set as the expected delay a user would experience if she is probabilistically blocked by the system.
+
+### FairCloud [[Link](https://dl.acm.org/doi/pdf/10.1145/2342356.2342396)]
+
+* The network allocation of a VM _X_ depends not only on the VMs running on the same machine with _X_, but also on the other VMs that _X_ communicates with and the cross-traffic on each link used by X.
+* Hard tradeoff between min-guarantee (minimum network bandwidth the tenants can expect for each VM they buy) and network proportionality (network resources should be divided among tenants in proportion to their payments.) Even without requiring min-guarantees, there is a tradeoff between network proportionality and high utilization.
+* Proportional Sharing at Link-Level (PS-L): link proportionality; consider a model in which each switch implements weighted fair queueing and has one queue for each tenant.
+* Proportional Sharing at Network-level (PS-N): the communication between the VMs has the same total weight through the network irrespective of the communication pattern between the VMs in Q.
