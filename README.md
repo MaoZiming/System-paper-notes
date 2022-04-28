@@ -9,7 +9,57 @@ I will read more papers in this summer!!
 I read those paper before but I think I will re-read them again!  
 And jot down some notes!
 
-### Raft
+### Raft (ATC'14)
+
+### Chubby (OSDI'06)
+
+### Delos (OSDI'20)
+
+### CopySet (ATC'13)
+
+### Dynamo (SOSP'07)
+
+### Spanner (OSDI'12)
+
+### GFS
+
+### MapReduce
+
+### Spark
+
+### Dryad
+
+### Naiad
+
+### DStreams
+
+### IOFlow
+
+### BigTable
+
+### RAMCloud
+
+### FaRM
+
+### Borg
+
+### Mesos
+
+### DRF
+
+### Carbyne
+
+### CAP
+
+### Impala
+
+### Dremel
+
+### Succinct
+
+### Tensorflow
+
+### Ray
 
 ## Resource Disaggregation
 
