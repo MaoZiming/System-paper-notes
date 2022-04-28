@@ -4,6 +4,13 @@
 
 I will read more papers in this summer!!
 
+## Distributed Systems
+
+I read those paper before but I think I will re-read them again!  
+And jot down some notes!
+
+### Raft
+
 ## Resource Disaggregation
 
 cuz I will be working on this...
